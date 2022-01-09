@@ -11,9 +11,9 @@ import org.testng.annotations.DataProvider;
         ,tags = "@Scenario01"
 )
 public class Run_in_Edge extends AbstractTestNGCucumberTests {
-    @Override
+    /*@Override
     @DataProvider(parallel = true)
     public Object[][] scenarios() {
         return super.scenarios();
-    }
+    }*/
 }

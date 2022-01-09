@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite" parallel="tests">
+<suite name="All Test Suite" parallel="classes">
     <test name="Opening chrome">
-<!--        <parameter name="browser" value="Chrome"/>-->
-        <classes>
-            <class name="TestNG_Runner.Run_in_chrome"/>
-        </classes>
-    </test>
-    <test name="Opening Edge">
-<!--        <parameter name="browser" value="Edge"/>-->
+        <parameter name="browser" value="Chrome"/>
         <classes>
             <class name="TestNG_Runner.Run_in_Edge"/>
+            <class name="TestNG_Runner.Run_in_chrome"></class>
         </classes>
     </test>
+    <!--<test name="Opening Edge">
+        <parameter name="browser" value="Edge"/>
+        <classes>
+            <class name="TestNG_Runner.Run_in_Edge"/>
+            <class name="TestNG_Runner.Run_in_chrome"></class>
+        </classes>
+    </test>-->
 </suite>

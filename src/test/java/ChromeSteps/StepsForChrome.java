@@ -12,20 +12,31 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
-@Test
+
 public class StepsForChrome {
 
     WebDriver driver;
-
+    @BeforeTest
+    @Parameters("browser")
+    //@Given("Launch browser {string}")
+    public void launch_browser(String browser){
+        if (browser.equalsIgnoreCase("Chrome")) {
+                System.setProperty("webdriver.chrome.driver", "C:\\SeleniumTraining\\drivers\\chromedriver.exe");
+                driver = new ChromeDriver();
+            } else if (browser.equalsIgnoreCase("Edge")) {
+                System.setProperty("webdriver.edge.driver", "C:\\SeleniumTraining\\drivers\\msedriver.exe");
+                driver = new EdgeDriver();
+            }
+        }
     @Given("Launch browser")
-    public void launch_browser(){
-          System.setProperty("webdriver.chrome.driver","C:\\SeleniumTraining\\drivers\\chromedriver.exe");
-          driver = new ChromeDriver();
-
+    public void launchBrowser() {
+        System.setProperty("webdriver.chrome.driver", "C:\\SeleniumTraining\\drivers\\chromedriver.exe");
+                 driver = new ChromeDriver();
     }
     @Then("Maximize the window")
     public void maximizeTheWindow() {

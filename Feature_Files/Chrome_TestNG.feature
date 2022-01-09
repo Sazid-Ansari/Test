@@ -3,6 +3,7 @@ Feature: check various functionality of Amazon in Chrome Browser
   #Scenario.01. Sign-up functionality check
   @Scenario01 @Test01_01 @Feature01
   Scenario: OPEN CHROME BROWSER,NAVIGATE TO AMAZON PAGE AND VERIFY ITS LOGO AND TITLE
+    #Given  Launch browser "browser name"
     Given  Launch browser
     Then   Maximize the window
     When   Navigate to amazon home page
